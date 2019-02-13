@@ -1,0 +1,208 @@
+mutation {
+  createEvent(input: {
+    title: "iem sydney 2019",
+    description: "esports tournament",
+    price: 200,
+    date: "05/28/2019",
+    user: "5c617cb8859356192b1ad056"
+  }) {
+    _id,
+    title,
+    description,
+    price,
+    date
+  }
+}
+
+mutation {
+  createEvent(input: {
+    title: "iem katowice 2019",
+    description: "esports tournament",
+    price: 200,
+    date: "02/14/2019",
+    user: "5c617cb8859356192b1ad056"
+  }) {
+    _id,
+    title,
+    description,
+    price,
+    date
+  }
+}
+
+mutation {
+  createUser(input: {
+    email: "fank@email.com",
+    password: "1234abcd",    
+  }) {
+    _id,
+    email,
+    createdEvents {
+      _id
+    }
+  }
+}
+
+mutation {
+  createUser(input: {
+    email: "test@email.com",
+    password: "1234abcd",    
+  }) {
+    _id,
+    email,
+    createdEvents {
+      _id
+    },
+    bookedEvents {
+      _id
+    }
+  }
+}
+
+mutation {
+  bookEvent(input: {
+    eventId: "5c617f80ad02a21994955656",
+    userId: "5c6192330b41cd1c33582a9f",    
+  }) {
+    _id,
+    createdAt,
+    modifiedAt,
+    user {
+      _id,
+      email,
+      password,
+      createdEvents {
+        _id
+      },
+      bookedEvents {
+        _id
+      }
+    },
+    event {
+      _id,
+      title,
+      description,
+      price,
+      date,
+      bookings {
+        _id
+      },
+      user {
+        _id,
+        email,
+        password,
+        createdEvents {
+        	_id
+      	},
+     	  bookedEvents {
+        	_id
+      	}
+      }
+    }
+  }
+}
+
+mutation {
+  cancelBooking(input: {
+    bookingId: "5c61a1de2717261d4f90d0a0"   
+  }) {
+    _id,
+    title,
+		description,
+    price,
+    user {
+      _id,
+      email
+    },
+    bookings {
+      _id
+    }
+  }
+}
+
+
+query {
+  events {
+    _id,
+    title,
+    description,
+    price,
+    date,
+    user {
+      _id,
+      email
+    }
+  }
+}
+
+query {
+  bookings {
+    _id,
+    user {
+      _id,
+      email
+    },
+    event {
+      _id,
+      title
+    }
+  }
+}
+
+query {
+  bookings {
+    _id,
+		createdAt,
+    modifiedAt,
+    event {
+      _id,
+      title,
+      description,
+      price,
+      date,
+      user {
+        _id,
+      	email,
+      	password,
+        createdEvents {
+          _id,
+      		title,
+      		description,
+      		price,
+      		date,
+          bookings {
+            _id
+          }
+        }
+      }
+    },
+    user {
+      _id,
+      email,
+      password,
+      createdEvents {
+        _id,
+      	title,
+      	description,
+      	price,
+      	date,
+        bookings {
+          _id
+        }
+      },
+      bookedEvents {
+        _id
+      }
+    }
+  }
+}
+
+query {
+  events {
+    _id,
+    title,
+    description,
+    price,
+    date
+  }
+}

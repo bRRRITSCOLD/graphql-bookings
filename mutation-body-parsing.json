@@ -1,0 +1,112 @@
+{
+  "kind": "Document",
+  "definitions": [
+    {
+      "kind": "OperationDefinition",
+      "operation": "mutation",
+      "variableDefinitions": [],
+      "directives": [],
+      "selectionSet": {
+        "kind": "SelectionSet",
+        "selections": [
+          {
+            "kind": "Field",
+            "name": {
+              "kind": "Name",
+              "value": "createUser"
+            },
+            "arguments": [
+              {
+                "kind": "Argument",
+                "name": {
+                  "kind": "Name",
+                  "value": "input"
+                },
+                "value": {
+                  "kind": "ObjectValue",
+                  "fields": [
+                    {
+                      "kind": "ObjectField",
+                      "name": {
+                        "kind": "Name",
+                        "value": "email"
+                      },
+                      "value": {
+                        "kind": "StringValue",
+                        "value": "blaine@email.com",
+                        "block": false
+                      }
+                    },
+                    {
+                      "kind": "ObjectField",
+                      "name": {
+                        "kind": "Name",
+                        "value": "password"
+                      },
+                      "value": {
+                        "kind": "StringValue",
+                        "value": "1234abcd",
+                        "block": false
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "directives": [],
+            "selectionSet": {
+              "kind": "SelectionSet",
+              "selections": [
+                {
+                  "kind": "Field",
+                  "name": {
+                    "kind": "Name",
+                    "value": "_id"
+                  },
+                  "arguments": [],
+                  "directives": []
+                },
+                {
+                  "kind": "Field",
+                  "name": {
+                    "kind": "Name",
+                    "value": "email"
+                  },
+                  "arguments": [],
+                  "directives": []
+                },
+                {
+                  "kind": "Field",
+                  "name": {
+                    "kind": "Name",
+                    "value": "createdEvents"
+                  },
+                  "arguments": [],
+                  "directives": [],
+                  "selectionSet": {
+                    "kind": "SelectionSet",
+                    "selections": [
+                      {
+                        "kind": "Field",
+                        "name": {
+                          "kind": "Name",
+                          "value": "_id"
+                        },
+                        "arguments": [],
+                        "directives": []
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "loc": {
+    "start": 0,
+    "end": 162
+  }
+}
